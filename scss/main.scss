@@ -2,6 +2,9 @@
 
 @import 'config';
 
+// importing menu scss
+@import 'menu.scss';
+
 // setting to boarder box for easier positing 
 * {
     box-sizing: border-box;
