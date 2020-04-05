@@ -39,3 +39,121 @@
         }
     }
 }
+
+// mennu overlay 
+
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    visibility: hidden;
+
+
+    // using class created in JS to then show the links when the menu button is clicked 
+    &.show {
+        visibility: visible;
+    }
+    // creating two verticle columns for the brand image (my face) and the Nav links
+    &-branding, 
+    &-nav {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        float: left; 
+        width: 50%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+
+    // setting nav side (right side) with a light overlay and top slidedown animation 
+    &-nav {
+        margin: 0;
+        padding: 0;
+        background: darken($primary-color, 5);
+        list-style: none;
+        transform: translate3d(0, -100%, 0 );
+        @include easeOut;
+        opacity: 0.9;
+
+        &.show {
+            // slide nav from top when show class is true 
+            transform: translate3d(0, 0, 0);
+
+        }
+    }
+
+
+    // setting branding side
+    
+    &-branding {
+        background: rgba($primary-color, .9);
+        @include easeOut;
+        transform: translate3d(0, 100%, 0);
+        
+        
+        
+        &.show {
+            // slide branding from the the bottom 
+            transform: translate3d(0, 0, 0);
+        }
+
+        .portrait {
+            background: url(../images/portrait.jpg);
+            background-size: 250px 350px;
+            width: 250px;
+            height: 350px;
+            border-radius: 3%;
+            background-attachment: center;
+            border: solid 3px $secondary-color;
+        }
+
+      
+
+    }
+    // added stlying transition from the rigt to gradually add the nav items 
+    .nav-item {
+        transform: translate3d(600px, 0, 0);
+        @include easeOut;
+
+
+        &.show {
+            // slide in from the right 
+            transform: translate3d(0, 0, 0);
+        }
+
+        // sets current page to secondary color for better navigation exp. 
+        &.current > a {
+            color: $secondary-color;
+        }
+    }
+
+      // styling of nav links 
+      .nav-link {
+        display: inline-block;
+        position: relative;
+        font-size: 30px;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        font-weight: 300;
+        color: #fff;
+        text-decoration: none;
+        @include easeOut;
+
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+}
+
+
+
+// delay sliding nav items by .1s 
+
+@for $x from 1 through 4 {
+    .nav-item:nth-child(#{$x}) {
+        transition-delay: $x * 0.1s;
+    }
+}

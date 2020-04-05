@@ -8,6 +8,10 @@ $show-home-image: true;
 $home-image: url(../images/background1.jpg);
 $background-opactity: 0.3; 
 
+// my selfie image 
+
+$selfie-picture: url(../images/portrait.jpg);
+
 
 // creating an ease out function to call throughout the CSS 
 @mixin easeOut {
