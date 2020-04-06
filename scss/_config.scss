@@ -39,3 +39,36 @@ $selfie-picture: url(../images/portrait.jpg);
         }
     }
 }
+
+
+// media query mixins for responsiveness - setup a placeholder so we can add content from any file to this function
+
+
+// what small screens see
+@mixin mediaSm {
+    @media screen and (max-width: 500px) {
+        @content;
+    }
+}
+// what medium screens see 
+@mixin mediaMd {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+// what Large screens see 
+
+@mixin mediaLg {
+    @media screen and (min-width:769px) and (max-width: 1170px) {
+        @content;
+    }
+}
+
+// what XL screens see 
+
+@mixin mediaXL {
+    @media screen and (min-width: 1171px) {
+        @content;
+    }
+}
