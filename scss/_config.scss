@@ -1,6 +1,6 @@
 
 // settings colors 
-$primary-color: #444; 
+$primary-color: #444 ; 
 $secondary-color: #eece1a;
 
 // setting variables for background image 
@@ -37,6 +37,17 @@ $selfie-picture: url(../images/portrait.jpg);
                 background: rgba($primary-color, $background-opactity);
             }
         }
+    }
+}
+
+
+// set text color 
+
+@function set-text-color($color) {
+    @if (lighness($color) > 40) {
+        @return #000; 
+    } @else {
+        @return #fff;
     }
 }
 

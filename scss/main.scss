@@ -6,7 +6,7 @@
 @import 'menu.scss';
 
 // importing mobile styles 
-@import 'mobile.scss';
+@import 'mobile.scss'l
 
 // setting to boarder box for easier positing 
 * {
@@ -23,7 +23,7 @@ body {
 
     // standard body styling
     background: $primary-color;
-    color: #fff;
+    color: set-text-color(rgba(lighten($primary-color);
     height: 100%;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
